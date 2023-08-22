@@ -1,0 +1,258 @@
+[
+          {
+              "id": "1",
+              "category": "Tops",
+              "name": "Fitted Rib-Knit T-Shirt",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Top1",
+              "price" : 30,
+              "colorName" : "Brown"
+        
+          },
+          
+          {
+              "id": "2",
+              "category": "Tops",
+              "name": "Blink 182 T-Shirt Dress",
+              "description": "T-shirt dress with Blink 182 graphics printed at the front and back. Cut in a loose + oversized fit so you can wear it as a drapey tee or a mini tee dress",
+              "imageName": "Top2",
+              "price" : 45,
+              "colorName" : "Pink"
+
+          },
+          
+          {
+              "id": "3",
+              "category": "Tops",
+              "name": "Everyday Snap Henley Top",
+              "description": "Staple henley top in our signature ribbed pointelle knit by Out From Under. Hits at the waist with a slim fit throughout and a v-neckline with long sleeves.",
+              "imageName": "Top3",
+              "price" : 29,
+              "colorName" : "Skyblue"
+          
+          },
+          
+          {
+              "id": "4",
+              "category": "Tops",
+              "name": "Nadia Cap Sleeve Top",
+              "description": "The perfect ribbed top from UO that you'll want to wear over and over again. Cropped to the waist and fitted throughout. Design details include a straight-across neckline, cap sleeves and a low-cut back. ",
+              "imageName": "Top4",
+              "price" : 65,
+              "colorName" : "White"
+          
+          },
+          
+          {
+              "id": "5",
+              "category": "Jackets",
+              "name": "Jordan Faux Leather Fitted Moto Jacket",
+              "description":  "UO moto jacket crafted from soft and supple faux leather. Cropped to the waist and fitted throughout with a collarless neckline, zip closure at the front and an adjustable belt at the hem.",
+              "imageName": "Jacket1",
+              "price" : 99,
+              "colorName" : "Red"
+          
+          },
+          {
+              "id": "6",
+              "category": "Jackets",
+              "name": "BDG Chuck Fleece Zip-Up Jacket",
+              "description": "Cozy zip-up fleece jacket by BDG featuring a boxy fit with a paneled front. Fitted with a standup neckline and zipper closure.",
+              "imageName": "Jacket2",
+              "price" : 79,
+              "colorName" : "Green"
+          
+          },
+          
+          {
+              "id": "7",
+              "category": "Jackets",
+              "name": "Erin Faux Leather Oversized Jacket",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Jacket3",
+              "price" : 30,
+              "colorName" : "White"
+          
+          },
+          
+          {
+              "id": "8",
+              "category": "Jackets",
+              "name": "Jules Faux Leather Blazer",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Jacket4",
+              "price" : 30,
+              "colorName" : "Black"
+          },
+          
+          {
+              "id": "9",
+              "category": "Pants",
+              "name": "Fitted Rib-Knit T-Shirt",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Pant1",
+              "price" : 30,
+              "colorName" : "Brown"
+          
+          },
+          
+          {
+              "id": "10",
+              "category": "Pants",
+              "name": "Fitted Rib-Knit T-Shirt",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Pant2",
+              "price" : 30,
+              "colorName" : "Brown"
+          
+          },
+          
+          {
+              "id": "11",
+              "category": "Pants",
+              "name": "Fitted Rib-Knit T-Shirt",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Pant3",
+              "price" : 30,
+              "colorName" : "Brown"
+          
+          },
+          
+          {
+              "id": "12",
+              "category": "Pants",
+              "name": "Fitted Rib-Knit T-Shirt",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Pant4",
+              "price" : 30,
+              "colorName" : "Brown"
+          
+          },
+          
+          {
+              "id": "13",
+              "category": "Skirts",
+              "name": "Fitted Rib-Knit T-Shirt",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Skirt1",
+              "price" : 30,
+              "colorName" : "Brown"
+          
+          },
+          
+          {
+              "id": "14",
+              "category": "Skirts",
+              "name": "Fitted Rib-Knit T-Shirt",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Skirt2",
+              "price" : 30,
+              "colorName" : "Brown"
+          
+          },
+          {
+              "id": "15",
+              "category": "Skirts",
+              "name": "Fitted Rib-Knit T-Shirt",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Skirt3",
+              "price" : 30,
+              "colorName" : "Brown"
+          
+          },
+          {
+              "id": "16",
+              "category": "Skirts",
+              "name": "Fitted Rib-Knit T-Shirt",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Skirt4",
+              "price" : 30,
+              "colorName" : "Brown"
+          
+          },
+          
+          {
+              "id": "17",
+              "category": "Shoes",
+              "name": "Fitted Rib-Knit T-Shirt",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Shoe1",
+              "price" : 30,
+              "colorName" : "Brown"
+          },
+          {
+              "id": "18",
+              "category": "Shoes",
+              "name": "Fitted Rib-Knit T-Shirt",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Shoe2",
+              "price" : 30,
+              "colorName" : "Brown"
+          
+          },
+          {
+              "id": "19",
+              "category": "Shoes",
+              "name": "Fitted Rib-Knit T-Shirt",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Shoe3",
+              "price" : 30,
+              "colorName" : "Brown"
+          },
+          {
+              "id": "20",
+             "category": "Shoes",
+              "name": "Fitted Rib-Knit T-Shirt",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Shoe4",
+              "price" : 30,
+              "colorName" : "Brown"
+          
+          },
+          {
+              "id": "21",
+              "category": "Sale",
+              "name": "Fitted Rib-Knit T-Shirt",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Sale1",
+              "price" : 30,
+              "colorName" : "Blue"
+          
+          },
+          
+          {
+              "id": "22",
+              "category": "Sale",
+              "name": "Fitted Rib-Knit T-Shirt",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Sale2",
+              "price" : 25,
+              "colorName" : "Purple"
+          
+          },
+          
+          {
+              "id": "23",
+              "category": "Sale",
+              "name": "Fitted Rib-Knit T-Shirt",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Sale3",
+              "price" : 34,
+              "colorName" : "Orange"
+          },
+          
+          {
+              "id": "24",
+              "category": "Sale",
+              "name": "Zoey Corduroy Cargo Short",
+              "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
+              "imageName": "Sale4",
+              "price" : 65,
+              "colorName" : "White"
+          
+          }
+          
+          
+      ]
+
+
