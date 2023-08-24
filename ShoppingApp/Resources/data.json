@@ -6,7 +6,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Top1",
               "price" : 30,
-              "colorName" : "Brown"
+              "colorName" : "Brown",
+              "avaliableColor" : ["Brown", "White", "Black"]
         
           },
           
@@ -17,7 +18,9 @@
               "description": "T-shirt dress with Blink 182 graphics printed at the front and back. Cut in a loose + oversized fit so you can wear it as a drapey tee or a mini tee dress",
               "imageName": "Top2",
               "price" : 45,
-              "colorName" : "Pink"
+              "colorName" : "Pink",
+              "avaliableColor" : ["Pink", "Yellow", "Purple"]
+
 
           },
           
@@ -28,7 +31,8 @@
               "description": "Staple henley top in our signature ribbed pointelle knit by Out From Under. Hits at the waist with a slim fit throughout and a v-neckline with long sleeves.",
               "imageName": "Top3",
               "price" : 29,
-              "colorName" : "Skyblue"
+              "colorName" : "Skyblue",
+              "avaliableColor" : ["Skyblue", "Yellow", "Purple"]
           
           },
           
@@ -39,7 +43,8 @@
               "description": "The perfect ribbed top from UO that you'll want to wear over and over again. Cropped to the waist and fitted throughout. Design details include a straight-across neckline, cap sleeves and a low-cut back. ",
               "imageName": "Top4",
               "price" : 65,
-              "colorName" : "White"
+              "colorName" : "White",
+              "avaliableColor" : ["White", "Black"]
           
           },
           
@@ -50,7 +55,8 @@
               "description":  "UO moto jacket crafted from soft and supple faux leather. Cropped to the waist and fitted throughout with a collarless neckline, zip closure at the front and an adjustable belt at the hem.",
               "imageName": "Jacket1",
               "price" : 99,
-              "colorName" : "Red"
+              "colorName" : "Brown",
+              "avaliableColor" : ["Brown"]
           
           },
           {
@@ -60,7 +66,8 @@
               "description": "Cozy zip-up fleece jacket by BDG featuring a boxy fit with a paneled front. Fitted with a standup neckline and zipper closure.",
               "imageName": "Jacket2",
               "price" : 79,
-              "colorName" : "Green"
+              "colorName" : "Green",
+              "avaliableColor" : ["Green"]
           
           },
           
@@ -71,7 +78,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Jacket3",
               "price" : 30,
-              "colorName" : "White"
+              "colorName" : "Black",
+              "avaliableColor" : ["Black"]
           
           },
           
@@ -82,7 +90,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Jacket4",
               "price" : 30,
-              "colorName" : "Black"
+              "colorName" : "Red",
+              "avaliableColor" : ["Red"]
           },
           
           {
@@ -92,7 +101,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Pant1",
               "price" : 30,
-              "colorName" : "Brown"
+              "colorName" : "Pink",
+              "avaliableColor" : ["Pink", "Yellow"]
           
           },
           
@@ -103,7 +113,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Pant2",
               "price" : 30,
-              "colorName" : "Brown"
+              "colorName" : "Brown",
+              "avaliableColor" : ["Brown"]
           
           },
           
@@ -114,7 +125,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Pant3",
               "price" : 30,
-              "colorName" : "Brown"
+              "colorName" : "Blue",
+              "avaliableColor" : ["Blue"]
           
           },
           
@@ -125,7 +137,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Pant4",
               "price" : 30,
-              "colorName" : "Brown"
+              "colorName" : "Blue",
+              "avaliableColor" : ["Blue"]
           
           },
           
@@ -136,7 +149,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Skirt1",
               "price" : 30,
-              "colorName" : "Brown"
+              "colorName" : "Yellow",
+              "avaliableColor" : ["Yellow"]
           
           },
           
@@ -147,7 +161,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Skirt2",
               "price" : 30,
-              "colorName" : "Brown"
+              "colorName" : "Pink",
+              "avaliableColor" : ["Pink", "Purple"]
           
           },
           {
@@ -157,7 +172,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Skirt3",
               "price" : 30,
-              "colorName" : "Brown"
+              "colorName" : "Black",
+              "avaliableColor" : ["Black", "White"]
           
           },
           {
@@ -167,7 +183,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Skirt4",
               "price" : 30,
-              "colorName" : "Brown"
+              "colorName" : "Black",
+              "avaliableColor" : ["Black", "Purple"]
           
           },
           
@@ -178,7 +195,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Shoe1",
               "price" : 30,
-              "colorName" : "Brown"
+              "colorName" : "Red",
+              "avaliableColor" : ["Red", "Black", "White"]
           },
           {
               "id": "18",
@@ -187,7 +205,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Shoe2",
               "price" : 30,
-              "colorName" : "Brown"
+              "colorName" : "White",
+              "avaliableColor" : ["White"]
           
           },
           {
@@ -197,7 +216,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Shoe3",
               "price" : 30,
-              "colorName" : "Brown"
+              "colorName" : "White",
+              "avaliableColor" : ["White", "Yellow"]
           },
           {
               "id": "20",
@@ -206,7 +226,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Shoe4",
               "price" : 30,
-              "colorName" : "Brown"
+              "colorName" : "Pink",
+              "avaliableColor" : ["Pink", "Yellow"]
           
           },
           {
@@ -216,7 +237,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Sale1",
               "price" : 30,
-              "colorName" : "Blue"
+              "colorName" : "Blue",
+              "avaliableColor" : ["Blue"]
           
           },
           
@@ -227,7 +249,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Sale2",
               "price" : 25,
-              "colorName" : "Purple"
+              "colorName" : "Purple",
+              "avaliableColor" : ["Purple"]
           
           },
           
@@ -238,7 +261,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Sale3",
               "price" : 34,
-              "colorName" : "Orange"
+              "colorName" : "Orange",
+              "avaliableColor" : ["Orange"]
           },
           
           {
@@ -248,7 +272,8 @@
               "description": "Notched, split neck.Short sleeves.Rib-knit cotton blend with stretch.",
               "imageName": "Sale4",
               "price" : 65,
-              "colorName" : "White"
+              "colorName" : "White",
+              "avaliableColor" : ["White"]
           
           }
           
