@@ -17,6 +17,7 @@ struct Product: Identifiable, Hashable, Codable {
     var imageName: String
     var price: Int
     var colorName: String
+    var avaliableColor: [String]
     
 }
 
