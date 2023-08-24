@@ -13,9 +13,29 @@ struct ProductDetailView: View {
     let sizeOptions = ["XS", "S", "M", "L", "XL"]
     @State private var sizeSelected = "XS"
     @State private var showingAlertDetail = false
+    @Binding var selectedColor: String
+
+    
     
     // var color: Color = .red
     var product: Product
+    
+    let colorMap: [String: Color] = [
+        "brown": .brown,
+        "yellow": .yellow,
+        "purple": .purple,
+        "black": .black,
+        "pink": .pink,
+        "white": .white,
+        "red": .red,
+        "green": .green,
+        "skyblue": Color.blue.opacity(0.5),
+        "orange": .orange
+
+
+        // Add more color mappings as needed
+    ]
+    
     
     var body: some View {
         ScrollView {
@@ -26,9 +46,16 @@ struct ProductDetailView: View {
                 
                 VStack {
                     
-                    Image(product.imageName)
-                        .resizable()
-                        .frame(width: 300, height: 400)
+                    ZStack {
+                        Image(product.imageName)
+                            .resizable()
+                            .frame(width: 300, height: 400)
+                        Rectangle()
+                            .frame(width: 30, height: 30, alignment: .leading)
+                            .foregroundColor(selectedColor != nil ? colorMap[selectedColor.lowercased()] : .clear)
+                            .padding(.top, 350)
+                            .padding(.trailing, 250)
+                    }
                     
                     VStack(alignment: .leading) {
                         Text(product.name)
@@ -41,21 +68,59 @@ struct ProductDetailView: View {
                         Spacer()
                         
                         
-                        Text("Color: \(product.colorName)")
-                            .font(.system(size: 12))
+                        Text("Color: \(selectedColor)")
+                            .font(.system(size: 14))
                         
-                        Circle()
-                            .fill(product.color)
-                            .frame(width: 30, height: 30)
-                        
+                        HStack(spacing: 10) {
+                        ForEach(product.avaliableColor, id: \.self) { colorName in
+                            Button(action: {
+                                
+                                selectedColor = colorName
+                                
+                            }, label: {
+                                
+                                if let color = colorMap[colorName.lowercased()] {
+                                    if color == .white {
+                                        Circle()
+                                            .strokeBorder(.black, lineWidth: 0.8)
+                                            .background(Circle().fill(color))
+                                            .frame(width: 30, height: 30)
+                                            .overlay(
+                                                Circle()
+                                            .strokeBorder(selectedColor == colorName ? Color.black : Color.clear, lineWidth: 0.8)
+                                            .frame(width: 40, height: 40)
+                                                )
+
+                                    } else {
+                                        Circle()
+                                            .fill(color)
+                                            .frame(width: 30, height: 30)
+                                            .overlay(
+                                                Circle()
+                                                    .strokeBorder(selectedColor == colorName ? Color.black : Color.clear, lineWidth: 0.8)
+                                                    .frame(width: 40, height: 40)
+                                                    
+                                            )
+                                            
+
+                                            
+
+                                        }
+                                    }
+                                
+                            })
+                           
+                            }
+                        }
                         
                         HStack {
                             Text("Size:")
+                                .font(.system(size: 14))
                             Spacer()
                             Picker (
                                 selection: $sizeSelected,
-                                label: Text("Select A Size"),
-                                
+                                label: Text("Select A Size")
+                                ,
                                 
                                 content:  {
                                     
@@ -64,26 +129,19 @@ struct ProductDetailView: View {
                                         
                                     }
                                 })
-                            
                             .pickerStyle(MenuPickerStyle())
-                            
-                            
-                            .foregroundColor(Color.black.opacity(0.6))
-                            Image(systemName: "chevron.right")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 10, height: 10)
-                                .padding(.trailing, 50)
+                            Spacer() // Pushes the picker to the left
+
                         }
-                        .font(Font.custom("Avenir Next", size: 16).weight(.medium))
-                        .background(Color.white)
+                        
                         
                         Text("Description:")
-                            .font(.system(size: 15))
+                            .font(.system(size: 14))
                         
                         Text("\(product.description)")
-                            .frame(width: 300, height: 40)
+                            .frame(width: 300, height: 50, alignment: .leading)
                             .font(.system(size: 12))
+
 
                         Button(action: {
                             
@@ -127,6 +185,6 @@ struct ProductDetailView: View {
 
 struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductDetailView(product: products[0])
+        ProductDetailView(selectedColor: .constant("Brown"), product: products[0])
     }
 }
