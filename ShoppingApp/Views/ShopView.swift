@@ -14,10 +14,12 @@ struct ShopView: View {
     @State private var isCartViewPresented = false
     @State var selectedCategory : String = "All"
     @State var filteredProducts = products
+    @Binding var selectedColor: String
+
     
     //    @State var savedProduct = SavedProductViewModel()
     @State var product : Product
-    
+
     
     
     var columns = [
@@ -137,7 +139,7 @@ struct ShopView: View {
                     { product in
                         
                         
-                        ProductCardView(product: product)
+                        ProductCardView(selectedColor: selectedColor, product: product)
                         
                         
                     }
@@ -153,7 +155,7 @@ struct ShopView: View {
 
 struct ShopView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopView(product: products[1])
+        ShopView(selectedColor: .constant("Brown"), product: products[1])
             .environmentObject(ProductManager())
         
         
