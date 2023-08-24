@@ -9,9 +9,7 @@ import SwiftUI
 
 struct ProductRowView: View {
     
-    @EnvironmentObject var cartmanager: ProductManager
-    
-    
+    @EnvironmentObject var cartmanager: ProductManager    
     var product: Product
     
     
