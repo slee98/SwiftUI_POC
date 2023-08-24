@@ -13,7 +13,7 @@ struct MainView: View {
         
         TabView {
             
-            ShopView(product: products[1])
+            ShopView(selectedColor: .constant("Brown"), product: products[1])
                 .tabItem {
                     Image(systemName: "tshirt")
                     Text("Shop")
