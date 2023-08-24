@@ -12,26 +12,33 @@ struct ProductCardView: View {
     @EnvironmentObject var cartmanager: ProductManager
     
     @State var descriptionView : Bool = false
-    
+    @State var selectedColor: String = "Brown"
+   
+
     var product : Product
     
     var body: some View {
         
         
         VStack {
-            ZStack  {
+            ZStack(alignment: .topTrailing) {
                 
                 Button(action: {
                     descriptionView = true
+                    selectedColor = product.colorName
+
                 }) {
                     
                     Image(product.imageName)
                         .resizable()
                         .cornerRadius(3)
                         .frame(width: 180,height: 270)
+                        
+
                 }
                 .sheet(isPresented: $descriptionView, content: {
-                    ProductDetailView(product: product)
+
+                    ProductDetailView(selectedColor: $selectedColor, product: product)
                         .environmentObject(cartmanager)
                 })
                 
@@ -50,8 +57,9 @@ struct ProductCardView: View {
                         .resizable()
                         .frame(width: 24, height: 22)
                         .foregroundColor(Color("CustomColor"))
-                        .padding(.bottom, 230)
-                        .padding(.leading, 140)
+                        .padding()
+
+
                 })
             }
             
