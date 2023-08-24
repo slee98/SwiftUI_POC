@@ -13,7 +13,14 @@ class ProductManager: ObservableObject {
     @Published private(set) var totalPrice: Int =  0
     @Published private(set) var savedProducts: [Product] = []
     @Published var searchItem: String = ""
+
+    init () {
+            
+        loadCart()
+        loadSaveProducts()
+    }
     
+
     
     var filteredProducts: [Product] {
         if searchItem.isEmpty {
@@ -42,9 +49,42 @@ class ProductManager: ObservableObject {
     func addToCart(_ addedProduct:Product) {
         products.append(addedProduct)
         totalPrice += addedProduct.price
+        saveProductInCarts()
         
+    }
+    
+    func saveProductInCarts() {
+    
+        do {
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            let jsonData = try encoder.encode(products)
         
-        
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                if let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("products.json") {
+                    try jsonData.write(to: fileURL)
+                    }
+                }
+//            let jsonData = try JSONSerialization.data(withJSONObject: products, options: .prettyPrinted)
+//            if let jsonString = String(data: jsonData, encoding: .utf8) {
+//                print(jsonString)
+//            }
+            } catch {
+                print("Error serializing JSON In Cart Products")
+                }
+            }
+    
+    func loadCart() {
+        if let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("products.json") {
+            do {
+                let jsonData = try Data(contentsOf: fileURL)
+                let decoder = JSONDecoder()
+                products = try decoder.decode([Product].self, from: jsonData)
+                totalPrice = products.reduce(0 , {$0 + $1.price})
+            } catch {
+                print("error loading cart")
+            }
+        }
     }
     
     func removeFromCart(_ removedProduct:Product) {
@@ -61,9 +101,35 @@ class ProductManager: ObservableObject {
     
     func addToSave(_ savedProduct:Product) {
         savedProducts.append(savedProduct)
-        
+        do {
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            let jsonData = try encoder.encode(savedProducts)
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                print(jsonString)
+            }
+//            let jsonData = try JSONSerialization.data(withJSONObject: products, options: .prettyPrinted)
+//            if let jsonString = String(data: jsonData, encoding: .utf8) {
+//                print(jsonString)
+//            }
+        } catch {
+            print("Error serializing JSON In Saved Products")
+        }
     }
     
+    
+    func loadSaveProducts() {
+        if let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("products.json") {
+            do {
+                let jsonData = try Data(contentsOf: fileURL)
+                let decoder = JSONDecoder()
+                products = try decoder.decode([Product].self, from: jsonData)
+                totalPrice = products.reduce(0 , {$0 + $1.price})
+            } catch {
+                print("error loading cart")
+            }
+        }
+    }
     
     func removeFromSave(_ unsavedProduct:Product) {
         //products =  products.filter { $0.id != removedProduct.id }
