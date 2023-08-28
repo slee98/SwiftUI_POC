@@ -1,4 +1,4 @@
-# Clothes Shopping App  🛍️👚👖🧥👗👡👛
+# Clothes Shopping App  
 
 ## Features
 
