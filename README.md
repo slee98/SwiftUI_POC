@@ -1,4 +1,6 @@
-# Clothes Shopping App  
+# Fashion Shopping App  
+## Demo
+![AUDEMO](https://github.com/slee98/SwiftUI_POC/assets/74482315/cc187b5b-26bb-4e95-bb85-9893279a09e8)
 
 ## Features
 
