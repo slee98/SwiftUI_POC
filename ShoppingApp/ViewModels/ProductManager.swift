@@ -9,18 +9,19 @@ import Foundation
 
 class ProductManager: ObservableObject {
     
-    @Published private(set) var products: [Product] = []
+    @Published private(set) var cartProducts: [UserSelectionModel] = [] //Product, ProductSize, ProductColor
     @Published private(set) var totalPrice: Int =  0
     @Published private(set) var savedProducts: [Product] = []
     @Published var searchItem: String = ""
-
+    
+   
     init () {
             
-        loadCart()
-        loadSaveProducts()
+//        loadCart()
+//        loadSaveProducts()
     }
     
-
+    
     
     var filteredProducts: [Product] {
         if searchItem.isEmpty {
@@ -32,66 +33,71 @@ class ProductManager: ObservableObject {
     
     
     //Computed Property
-    var arrangedProducts: [Product: Int] {
-        var map = [Product: Int]()
-        for i in 0 ..< products.count {
+    var arrangedProducts: [UserSelectionModel: Int] {
+        var map = [UserSelectionModel: Int]()
+        for i in 0 ..< cartProducts.count {
             
-            if (map[products[i]] == nil) {
-                map[products[i]] = 1
+            if (map[cartProducts[i]] == nil) {
+                map[cartProducts[i]] = 1
             } else {
-                map[products[i]]! += 1
+                map[cartProducts[i]]! += 1
             }
         }
         return map
     }
     
     
-    func addToCart(_ addedProduct:Product) {
-        products.append(addedProduct)
+    func addToCart(_ addedProduct:Product, _ selectedSize: String, _ selectedColor: String ) {
+        
+        let userSelection = UserSelectionModel(productInfo: addedProduct, productSize: selectedSize, productColor: selectedColor)
+        cartProducts.append(userSelection)
         totalPrice += addedProduct.price
-        saveProductInCarts()
+        print(userSelection)
+        print(cartProducts.count)
+
+       // saveProductInCarts()
         
     }
     
-    func saveProductInCarts() {
-    
-        do {
-            let encoder = JSONEncoder()
-            encoder.outputFormatting = .prettyPrinted
-            let jsonData = try encoder.encode(products)
-        
-            if let jsonString = String(data: jsonData, encoding: .utf8) {
-                if let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("products.json") {
-                    try jsonData.write(to: fileURL)
-                    }
-                }
-//            let jsonData = try JSONSerialization.data(withJSONObject: products, options: .prettyPrinted)
+//    func saveProductInCarts() {
+//
+//        do {
+//            let encoder = JSONEncoder()
+//            encoder.outputFormatting = .prettyPrinted
+//            let jsonData = try encoder.encode(cartProducts)
+//
 //            if let jsonString = String(data: jsonData, encoding: .utf8) {
-//                print(jsonString)
+//                if let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("products.json") {
+//                    try jsonData.write(to: fileURL)
+//                    }
+//                }
+////            let jsonData = try JSONSerialization.data(withJSONObject: products, options: .prettyPrinted)
+////            if let jsonString = String(data: jsonData, encoding: .utf8) {
+////                print(jsonString)
+////            }
+//            } catch {
+//                print("Error serializing JSON In Cart Products")
+//                }
 //            }
-            } catch {
-                print("Error serializing JSON In Cart Products")
-                }
-            }
     
-    func loadCart() {
-        if let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("products.json") {
-            do {
-                let jsonData = try Data(contentsOf: fileURL)
-                let decoder = JSONDecoder()
-                products = try decoder.decode([Product].self, from: jsonData)
-                totalPrice = products.reduce(0 , {$0 + $1.price})
-            } catch {
-                print("error loading cart")
-            }
-        }
-    }
-    
+//    func loadCart() {
+//        if let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("products.json") {
+//            do {
+//                let jsonData = try Data(contentsOf: fileURL)
+//                let decoder = JSONDecoder()
+//                cartProducts = try decoder.decode([Product].self, from: jsonData)
+//                totalPrice = cartProducts.reduce(0 , {$0 + $1.price})
+//            } catch {
+//                print("error loading cart")
+//            }
+//        }
+//    }
+//
     func removeFromCart(_ removedProduct:Product) {
         //products =  products.filter { $0.id != removedProduct.id }
-        for i in 0 ..< products.count {
-            if (products[i].id == removedProduct.id) {
-                products.remove(at: i)
+        for i in 0 ..< cartProducts.count {
+            if (cartProducts[i].productInfo.id == removedProduct.id) {
+                cartProducts.remove(at: i)
                 totalPrice -= removedProduct.price
                 break
                 
@@ -118,18 +124,18 @@ class ProductManager: ObservableObject {
     }
     
     
-    func loadSaveProducts() {
-        if let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("products.json") {
-            do {
-                let jsonData = try Data(contentsOf: fileURL)
-                let decoder = JSONDecoder()
-                products = try decoder.decode([Product].self, from: jsonData)
-                totalPrice = products.reduce(0 , {$0 + $1.price})
-            } catch {
-                print("error loading cart")
-            }
-        }
-    }
+//    func loadSaveProducts() {
+//        if let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("products.json") {
+//            do {
+//                let jsonData = try Data(contentsOf: fileURL)
+//                let decoder = JSONDecoder()
+//                cartProducts = try decoder.decode([Product].self, from: jsonData)
+//                totalPrice = cartProducts.reduce(0 , {$0 + $1.price})
+//            } catch {
+//                print("error loading cart")
+//            }
+//        }
+//    }
     
     func removeFromSave(_ unsavedProduct:Product) {
         //products =  products.filter { $0.id != removedProduct.id }
@@ -143,8 +149,8 @@ class ProductManager: ObservableObject {
             }
         }
         
-        for i in 0 ..< products.count {
-            if (products[i].id == unsavedProduct.id) {
+        for i in 0 ..< cartProducts.count {
+            if (cartProducts[i].productInfo.id == unsavedProduct.id) {
                 break
                 
             }
