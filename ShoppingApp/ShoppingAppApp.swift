@@ -11,8 +11,8 @@ import SwiftUI
 struct ShoppingAppApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
-                .environmentObject(ProductManager())
+            LaunchScreenView()
+               
                 
         }
     }
