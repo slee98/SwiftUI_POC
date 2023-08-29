@@ -1,9 +1,37 @@
-# Clothes Shopping App 
+# Fashion Shopping App  
 
-Features:
-Product Listings with Categories (All, Tops, Jacket, Pants, Skirt, Shoe, Sale)
-Product Details
-Shopping Cart
-Wishlist
-Reviews and Ratings
-Search Functionality
+## Demo
+![AUDEMO](https://github.com/slee98/SwiftUI_POC/assets/74482315/e4d8c09e-5a85-42a0-9f20-c3d7636e2dd6)
+
+## Features
+
+- 👚 **Product Listings with Categories (All, Tops, Jacket, Pants, Skirt, Shoe, Sale)**
+  - Browse through clothing items conveniently categorized for easy navigation.
+
+- 📄 **Product Details**
+  - View Diverse Colors of Products
+  - Detailed descriptions
+  - Select available sizes and colors
+
+- 🛍️ **Shopping Cart**
+  - Add desired items to the cart
+  - Review selections
+  - Adjust quantities
+  - See total cost before checkout
+
+- 🩷 **Wishlist**
+  - Create a wishlist of items for future consideration
+  - Keep track of favorite products
+
+- 🌟 **Reviews and Ratings**
+  - Read reviews from other customers
+  - Gain insights into product quality and fit
+  - Leave your own reviews and ratings
+
+- 🔍 **Search Functionality**
+  - Powerful search feature to quickly find specific products
+  - Search by keywords, categories, brands, or price ranges
+
+---
+
+This project showcases my iOS development skills and demonstrates my ability to create user-friendly and visually appealing applications. The app offers a seamless shopping experience with intuitive navigation and a range of features designed to enhance user satisfaction.
