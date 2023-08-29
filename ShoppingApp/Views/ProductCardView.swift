@@ -20,7 +20,7 @@ struct ProductCardView: View {
     var body: some View {
         
         
-        VStack {
+        VStack(spacing:1) {
             ZStack(alignment: .topTrailing) {
                 
                 Button(action: {
@@ -38,8 +38,9 @@ struct ProductCardView: View {
                 }
                 .sheet(isPresented: $descriptionView, content: {
 
-                    ProductDetailView(selectedColor: $selectedColor, product: product)
+                    ProductDetailView(product: product)
                         .environmentObject(cartmanager)
+
                 })
                 
                 Button(action: {
@@ -91,6 +92,7 @@ struct ProductCardView_Previews: PreviewProvider {
     static var previews: some View {
         ProductCardView(product: products[1])
             .environmentObject(ProductManager())
+
         
         
     }
