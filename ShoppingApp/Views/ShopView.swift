@@ -14,12 +14,6 @@ struct ShopView: View {
     @State private var isCartViewPresented = false
     @State var selectedCategory : String = "All"
     @State var filteredProducts = products
-    @Binding var selectedColor: String
-
-    
-    //    @State var savedProduct = SavedProductViewModel()
-    @State var product : Product
-
     
     
     var columns = [
@@ -49,14 +43,13 @@ struct ShopView: View {
                 Button(action: {
                     isCartViewPresented = true
                 }) {
-                    CartButtonView(numberOfProducts: cartmanager.products.count)
+                    CartButtonView(numberOfProducts: cartmanager.cartProducts.count)
                         .foregroundColor(.black)
                         .padding(.leading, 300)
                 }
                 
                 .sheet(isPresented: $isCartViewPresented, content: {
                     CartView()
-                        .environmentObject(cartmanager)
                 })
             }
             
@@ -138,8 +131,8 @@ struct ShopView: View {
                     ForEach(filteredProducts, id: \.self)
                     { product in
                         
-                        
-                        ProductCardView(selectedColor: selectedColor, product: product)
+                        ProductCardView(product: product)
+                  
                         
                         
                     }
@@ -155,7 +148,7 @@ struct ShopView: View {
 
 struct ShopView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopView(selectedColor: .constant("Brown"), product: products[1])
+        ShopView()
             .environmentObject(ProductManager())
         
         
