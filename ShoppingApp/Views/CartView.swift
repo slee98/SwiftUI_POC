@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CartView: View {
     
-    @EnvironmentObject var cartManager: ProductManager
+    @EnvironmentObject var cartmanager : ProductManager
     @Environment(\.presentationMode) var presentationMode
     var columns = [
         GridItem(.fixed(10), spacing: 100),
@@ -18,35 +18,57 @@ struct CartView: View {
     
     var body: some View {
         VStack {
-            HStack {
+            VStack(spacing:1) {
                 Text("AU")
                     .bold()
-                    .font(.system(size:20))
+                    .font(.system(size:16))
                     .padding(.top, 50)
-                
-                
+                        
+                Text("Shopping Bag")
+                    .bold()
+                    .font(.system(size:20))
+
             }
             
+            Divider()
             ScrollView{
                 
-                if cartManager.products.count > 0 {
-                    let uniqueProducts = Array(Set(cartManager.products))
+                if cartmanager.cartProducts.count > 0 {
+
+                    let uniqueProducts = Array(Set(cartmanager.cartProducts))
                     
                     LazyVGrid(columns: columns) {
-                        ForEach(uniqueProducts, id: \.id) {
-                            product in
+                        ForEach(uniqueProducts, id: \.self) { userSelection in
+                            Divider()
                             
-                            ProductRowView(product: product)
+                    ProductRowView(product: userSelection.productInfo, userSelection: UserSelectionModel(productInfo: userSelection.productInfo, productSize: userSelection.productSize, productColor: userSelection.productColor))
+                           
+                                                    
+                        }}
+                    
+                    
+                    VStack(spacing: 1){
+                    HStack {
+                            Text("Subtotal")
+                            Spacer()
+                            Text("$\(cartmanager.totalPrice).00")
+                                .bold()
+                        }
+                        HStack {
+                            Text("Shipping")
+                            Spacer()
+                            Text("TBD")
+                                .bold()
+                        }
+                        HStack {
+                            Text("Estimated Tax")
+                            Spacer()
+                            Text("$0.00")
+                                .bold()
                         }
                     }
-                    
-                    
-                    HStack {
-                        Text("Your cart total is")
-                        Spacer()
-                        Text("$\(cartManager.totalPrice).00")
-                            .bold()
-                    }.padding()
+                    .padding(.horizontal, 20)
+                    .font(.system(size: 14))
                 } else {
                     Text("Your Shopping Bag is currently empty")
                         .bold()
