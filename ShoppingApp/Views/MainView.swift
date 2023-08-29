@@ -13,7 +13,7 @@ struct MainView: View {
         
         TabView {
             
-            ShopView(selectedColor: .constant("Brown"), product: products[1])
+            ShopView()
                 .tabItem {
                     Image(systemName: "tshirt")
                     Text("Shop")
@@ -26,8 +26,10 @@ struct MainView: View {
                 }
             
         }
+        .onAppear() {
+            UITabBar.appearance().backgroundColor = .white
+        }
         .accentColor(.black)
-        
         
     }}
 
