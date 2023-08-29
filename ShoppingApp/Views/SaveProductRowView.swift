@@ -14,6 +14,7 @@ struct SaveProductRowView: View {
     @State private var showingAlert = false
     
     @State var product : Product
+    @State var userSelection : UserSelectionModel
     
     
     
@@ -66,7 +67,7 @@ struct SaveProductRowView: View {
                 
                 Button(action: {
                     
-                    cartmanager.addToCart(product)
+                    cartmanager.addToCart(userSelection.productInfo, userSelection.productSize, userSelection.productColor)
                     showingAlert = true
                     
                 }, label: {
@@ -99,7 +100,7 @@ struct SaveProductRowView: View {
 
 struct SaveProductRowView_Previews: PreviewProvider {
     static var previews: some View {
-        SaveProductRowView(product: products[0])
+        SaveProductRowView(product: products[0], userSelection: UserSelectionModel(productInfo: products[0], productSize: "bb", productColor: "Bb"))
             .environmentObject(ProductManager())
         
         
