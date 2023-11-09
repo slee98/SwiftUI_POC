@@ -2,7 +2,7 @@
 //  LaunchScreenView.swift
 //  ShoppingApp
 //
-//  Created by Soyeon Lee on 10/3/23.
+//  Created by Soyeon Lee on 11/9/23.
 //
 
 import SwiftUI
