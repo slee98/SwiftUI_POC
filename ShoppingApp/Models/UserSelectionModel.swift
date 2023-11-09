@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct UserSelectionModel: Hashable {
+    var productInfo: Product
+    var productSize: String
+    var productColor: String
+}
+
