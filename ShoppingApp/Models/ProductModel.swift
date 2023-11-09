@@ -21,7 +21,6 @@ struct Product: Identifiable, Hashable, Codable {
     
 }
 
-
 extension Product {
     
     var color : Color {
@@ -42,12 +41,9 @@ extension Product {
             return Color.white
         case "skyblue":
             return Color.blue.opacity(0.5)
-            
-            
         default:
             print("Unsupported Colorcode: \(colorCode)")
             return Color.black
-            
-        }        
+        }
     }
 }
