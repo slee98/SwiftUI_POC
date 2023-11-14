@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainView: View {
     
+    let productManager = ProductManager()
+    
     var body: some View {
         
         TabView {
@@ -24,21 +26,19 @@ struct MainView: View {
                     Image(systemName: "heart")
                     Text("WishList")
                 }
-            
         }
         .onAppear() {
             UITabBar.appearance().backgroundColor = .white
         }
+        .environmentObject(productManager)
         .accentColor(.black)
-        
-    }}
-
+    }
+}
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
             .environmentObject(ProductManager())
-        
     }
 }
 
