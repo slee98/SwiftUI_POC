@@ -27,13 +27,12 @@ struct CartButtonView: View {
                     .background(.black)
                     .cornerRadius(50)
             }
-            
         }
     }
 }
+
 struct CartButtonView_Previews: PreviewProvider {
     static var previews: some View {
         CartButtonView(numberOfProducts: 1)
-        
     }
 }

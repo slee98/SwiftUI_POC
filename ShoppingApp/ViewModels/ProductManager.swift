@@ -13,7 +13,6 @@ class ProductManager: ObservableObject {
     @Published private(set) var totalPrice: Int =  0
     @Published private(set) var savedProducts: [Product] = []
     @Published var searchItem: String = ""
-    
    
     init () {
             
@@ -21,13 +20,9 @@ class ProductManager: ObservableObject {
 //        loadSaveProducts()
     }
     
-    
-    
-    var filteredProducts: [Product] {
-        if searchItem.isEmpty {
-            return products
-        } else {
-            return products.filter { $0.name.localizedCaseInsensitiveContains(searchItem) }
+    var filteredProducts : [Product] {
+        return products.filter { product in
+            product.name.lowercased().hasPrefix(searchItem.lowercased())
         }
     }
     
@@ -52,9 +47,6 @@ class ProductManager: ObservableObject {
         let userSelection = UserSelectionModel(productInfo: addedProduct, productSize: selectedSize, productColor: selectedColor)
         cartProducts.append(userSelection)
         totalPrice += addedProduct.price
-        print(userSelection)
-        print(cartProducts.count)
-
        // saveProductInCarts()
         
     }
@@ -112,7 +104,6 @@ class ProductManager: ObservableObject {
             encoder.outputFormatting = .prettyPrinted
             let jsonData = try encoder.encode(savedProducts)
             if let jsonString = String(data: jsonData, encoding: .utf8) {
-                print(jsonString)
             }
 //            let jsonData = try JSONSerialization.data(withJSONObject: products, options: .prettyPrinted)
 //            if let jsonString = String(data: jsonData, encoding: .utf8) {

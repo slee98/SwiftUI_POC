@@ -13,34 +13,29 @@ struct ProductCardView: View {
     
     @State var descriptionView : Bool = false
     @State var selectedColor: String = "Brown"
-   
-
+    
     var product : Product
     
     var body: some View {
-        
-        
         VStack(spacing:1) {
             ZStack(alignment: .topTrailing) {
                 
                 Button(action: {
                     descriptionView = true
                     selectedColor = product.colorName
-
+                    
                 }) {
                     
                     Image(product.imageName)
                         .resizable()
                         .cornerRadius(3)
                         .frame(width: 180,height: 270)
-                        
-
                 }
                 .sheet(isPresented: $descriptionView, content: {
-
+                    
                     ProductDetailView(product: product)
                         .environmentObject(cartmanager)
-
+                    
                 })
                 
                 Button(action: {
@@ -50,8 +45,6 @@ struct ProductCardView: View {
                     } else {
                         cartmanager.addToSave(product)
                     }
-                    
-                    // Update the binding value
                 }, label: {
                     
                     Image(systemName: cartmanager.savedProducts.contains(product) ? "heart.fill" : "heart")
@@ -59,8 +52,6 @@ struct ProductCardView: View {
                         .frame(width: 24, height: 22)
                         .foregroundColor(Color("CustomColor"))
                         .padding()
-
-
                 })
             }
             
@@ -71,29 +62,17 @@ struct ProductCardView: View {
                     .bold()
                     .foregroundColor(.black)
                     .padding(.top,5)
-                
-                
                 Text("$\(product.price).00")
                     .font(.caption)
             }
-            
             .frame(width: 180, height: 40)
-            
-            
-            
         }
     }
-    
-    
 }
-
 
 struct ProductCardView_Previews: PreviewProvider {
     static var previews: some View {
         ProductCardView(product: products[1])
             .environmentObject(ProductManager())
-
-        
-        
     }
 }

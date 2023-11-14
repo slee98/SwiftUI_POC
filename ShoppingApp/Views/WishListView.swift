@@ -11,34 +11,27 @@ struct WishListView: View {
     
     @EnvironmentObject var cartManager: ProductManager
     @Environment(\.presentationMode) var presentationMode
-
-    
     
     var columns = [
         GridItem(.fixed(5), spacing: 185),
         GridItem(.fixed(5), spacing: 185)
     ]
     
-    
     var body: some View {
-        
         VStack {
             VStack(spacing:1) {
                 Text("AU")
                     .bold()
                     .font(.system(size:16))
-                    
-                        
+                
                 Text("WishList")
                     .bold()
                     .font(.system(size:20))
-
+                
             }
             
             Divider()
-            
             ScrollView {
-                
                 LazyVGrid(columns: columns, spacing: 50) {
                     
                     if cartManager.savedProducts.count > 0 {
@@ -52,7 +45,6 @@ struct WishListView: View {
                                     .padding(.top,20)
                                 
                             }
-                            
                         } } else {
                             VStack {
                                 Text("Your WishList is currently empty.")
@@ -62,7 +54,6 @@ struct WishListView: View {
                                 Button(action: {
                                     
                                     presentationMode.wrappedValue.dismiss() //dismiss the screen
-                                    
                                     
                                 }, label: {
                                     Text("Shop Now")
@@ -75,14 +66,10 @@ struct WishListView: View {
                                         )
                                         .padding()
                                 })
-                                
                             }
                             .frame(width: 300)
-
-                        }
-                }
+                        }}
                 .padding(.leading, 200)
-                
             }
         }
     }}
@@ -91,6 +78,5 @@ struct WishListView_Previews: PreviewProvider {
     static var previews: some View {
         WishListView()
             .environmentObject(ProductManager())
-        
     }
 }

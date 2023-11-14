@@ -15,19 +15,13 @@ struct ShopView: View {
     @State var selectedCategory : String = "All"
     @State var filteredProducts = products
     
-    
     var columns = [
         GridItem(.fixed(5), spacing: 185),
         GridItem(.fixed(5), spacing: 185)
     ]
     
-    
-    
-    
     var body: some View {
-        
         VStack {
-            
             ZStack {
                 
                 Color(.white)
@@ -39,7 +33,6 @@ struct ShopView: View {
                     .font(.system(size:25))
                     .padding(.top, 10)
                 
-                
                 Button(action: {
                     isCartViewPresented = true
                 }) {
@@ -47,12 +40,10 @@ struct ShopView: View {
                         .foregroundColor(.black)
                         .padding(.leading, 300)
                 }
-                
                 .sheet(isPresented: $isCartViewPresented, content: {
                     CartView()
                 })
             }
-            
             
             HStack(){
                 
@@ -64,8 +55,6 @@ struct ShopView: View {
                     .searchItem)
                 .foregroundColor(Color.black)
                 .font(.system(size: 15.0))
-                
-                
             }
             .frame(width: 350, height: 30)
             .font(.headline)
@@ -79,14 +68,9 @@ struct ShopView: View {
             .padding(.horizontal)
             .padding(.top, 10)
             
-            
-            
             ScrollView(.horizontal, showsIndicators: false){
-                
                 HStack(spacing:10) {
-                    
                     ForEach(0 ..< categories.count) { i in
-                        
                         
                         Button(action: {
                             
@@ -111,46 +95,28 @@ struct ShopView: View {
                                         selectedCategory ==  categories[i] ? Color.gray.opacity(0.3) : Color.gray.opacity(0.1) ,
                                         in: RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
                                     )
-                                
-                                
                             })
-                        
                     }
                 }
                 .padding(.horizontal)
                 .padding(.vertical)
-                
             }
-            
-            
             ScrollView {
-                
                 LazyVGrid(columns: columns, spacing: 30) {
-                    
-                    
                     ForEach(filteredProducts, id: \.self)
                     { product in
                         
                         ProductCardView(product: product)
-                  
-                        
-                        
                     }
                 }
             }
-            
-            
         }
     }
 }
-
-
 
 struct ShopView_Previews: PreviewProvider {
     static var previews: some View {
         ShopView()
             .environmentObject(ProductManager())
-        
-        
     }
 }

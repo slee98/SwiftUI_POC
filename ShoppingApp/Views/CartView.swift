@@ -15,7 +15,6 @@ struct CartView: View {
         GridItem(.fixed(10), spacing: 100),
     ]
     
-    
     var body: some View {
         VStack {
             VStack(spacing:1) {
@@ -23,32 +22,29 @@ struct CartView: View {
                     .bold()
                     .font(.system(size:16))
                     .padding(.top, 50)
-                        
+                
                 Text("Shopping Bag")
                     .bold()
                     .font(.system(size:20))
-
             }
             
             Divider()
             ScrollView{
                 
                 if cartmanager.cartProducts.count > 0 {
-
+                    
                     let uniqueProducts = Array(Set(cartmanager.cartProducts))
                     
                     LazyVGrid(columns: columns) {
                         ForEach(uniqueProducts, id: \.self) { userSelection in
                             Divider()
                             
-                    ProductRowView(product: userSelection.productInfo, userSelection: UserSelectionModel(productInfo: userSelection.productInfo, productSize: userSelection.productSize, productColor: userSelection.productColor))
-                           
-                                                    
-                        }}
-                    
+                            ProductRowView(product: userSelection.productInfo, userSelection: UserSelectionModel(productInfo: userSelection.productInfo, productSize: userSelection.productSize, productColor: userSelection.productColor))
+                        }
+                    }
                     
                     VStack(spacing: 1){
-                    HStack {
+                        HStack {
                             Text("Subtotal")
                             Spacer()
                             Text("$\(cartmanager.totalPrice).00")
@@ -77,7 +73,6 @@ struct CartView: View {
                         
                         presentationMode.wrappedValue.dismiss() //dismiss the screen
                         
-                        
                     }, label: {
                         Text("Shop Now")
                             .foregroundColor(.black)
@@ -89,7 +84,6 @@ struct CartView: View {
                             )
                             .padding()
                     })
-                    
                 }
             }
             .navigationTitle(Text("My Cart"))
